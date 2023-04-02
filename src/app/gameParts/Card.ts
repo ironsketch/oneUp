@@ -5,10 +5,16 @@ export class Card {
     value?: number;
     isJoker?: boolean;
 
-    init(name: string, value: number, isJoker: boolean): void {
-        this.name = name;
+    /**
+     * Initialization method.
+     *
+     * @param value - The card value
+     * @returns void
+     */
+    init(value: number): void {
+        this.name = value.toString();
         this.value = value;
-        this.isJoker = isJoker;
+        this.isJoker = value === 13;
     }
 
     /**
